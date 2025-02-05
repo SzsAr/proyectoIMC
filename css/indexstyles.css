@@ -1,0 +1,31 @@
+#contenedor-form{
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(255, 91, 91) , rgb(108, 108, 207));
+    margin: 5em auto;
+    border-radius: 50px;
+}
+
+.bajo-peso {
+    text-decoration: underline;
+    color: blue; /* Color para bajo peso */
+    background: blue;
+}
+
+.normal {
+    text-decoration: underline;
+    color: green; /* Color para normal */
+    background: green;
+}
+
+.sobrepeso {
+    text-decoration: underline;
+    color: orange; /* Color para sobrepeso */
+    background: orange;
+}
+
+.obesidad {
+    text-decoration: underline;
+    color: red; /* Color para obesidad */
+    background: red;
+}

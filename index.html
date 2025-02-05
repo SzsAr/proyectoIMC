@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/indexstyles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-light text-center">
+    <div class="container bg-danger p-5" id="contenedor-form">
+        <h1 class="text-center">CALCULADORA DE MASA MUSCULAR</h1>
+        <button class="btn btn-dark mb-5" id="btn-color">LISTO</button>
+
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="inputNombre" placeholder="INGRESE SU NOMBRE">            
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" id="inputPeso" placeholder="INGRESE EL PESO EN KG">            
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" id="inputAltura" placeholder="INGRESE SU ALTURA ej: 1.70">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" id="btn-guardar">LISTO</button>
+            <button class="btn btn-success" id="btn-resultados">VER RESULTADOS</button>
+            <button class="btn btn-warning" id="btn-exportar-pdf">EXPORTAR A PDF</button>
+        </div>
+    </div>
+
+    <div class="container text-center" id="container-result">
+        <table class="table"> 
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
+                    <th>Clasificación</th>
+                </tr>
+            </thead>
+            <tbody id="tablaResultados">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

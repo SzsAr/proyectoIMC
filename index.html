@@ -6,13 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/indexstyles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body class="bg-light text-center">
     <div class="container bg-danger p-5" id="contenedor-form">
         <h1 class="text-center">CALCULADORA DE MASA MUSCULAR</h1>
-        <button class="btn btn-dark mb-5" id="btn-color">LISTO</button>
-
-
+        <button class="btn btn-dark mb-5" id="btn-color">DarkMode  <i class="fa-solid fa-circle-half-stroke"></i></button>
+        
         <div class="mb-3">
             <input type="text" class="form-control" id="inputNombre" placeholder="INGRESE SU NOMBRE">            
         </div>
@@ -23,13 +25,14 @@
             <input type="number" class="form-control" id="inputAltura" placeholder="INGRESE SU ALTURA ej: 1.70">
         </div>
         <div class="mb-3">
-            <button class="btn btn-primary" id="btn-guardar">LISTO</button>
-            <button class="btn btn-success" id="btn-resultados">VER RESULTADOS</button>
-            <button class="btn btn-warning" id="btn-exportar-pdf">EXPORTAR A PDF</button>
+            <button class="btn btn-primary" id="btn-guardar">LISTO  <i class="fa-solid fa-check"></i></button>
+            <button class="btn btn-success" id="btn-resultados">VER RESULTADOS  <i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-warning" id="btn-exportar-pdf">EXPORTAR A PDF  <i class="fa-solid fa-file-pdf"></i></button>
         </div>
     </div>
 
     <div class="container text-center" id="container-result">
+        <h1>RESULTADOS IMC</h1>
         <table class="table"> 
             <thead>
                 <tr>
@@ -47,6 +50,6 @@
     </div>
 
     <script src="js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>

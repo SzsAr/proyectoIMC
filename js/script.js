@@ -103,15 +103,30 @@ document.getElementById('btn-exportar-pdf').addEventListener('click', exportarPD
 function exportarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    const resultados = JSON.parse(localStorage.getItem('resultados')) || [];
 
-    doc.text("Resultados de IMC", 10, 10);
-    doc.text("Nombre, Peso, Altura, IMC, Clasificación", 10, 20); // Encabezados
+    // Captura la tabla
+    const tablaResultados = document.getElementById('container-result');
+    
+    html2canvas(tablaResultados).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 190; // Ancho de la imagen en mm
+        const pageHeight = doc.internal.pageSize.height;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const heightLeft = imgHeight;
 
-    for (let i = 0; i < resultados.length; i++) {
-        const row = `${nombres[i]}, ${pesos[i]}, ${alturas[i]}, ${resultados[i].toFixed(2)}, ${clasificacion[i]}`;
-        doc.text(row, 10, 30 + (i * 10)); // Ajustar la posición de cada fila
-    }
+        let position = 10;
 
-    doc.save("resultados.pdf"); // Descargar el PDF
+        // Agregar la imagen al PDF
+        doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        position += heightLeft;
+
+        // Si la imagen es más alta que la página, agregar una nueva página
+        if (heightLeft >= pageHeight) {
+            position = 10;
+            doc.addPage();
+            doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        }
+
+        doc.save("resultados.pdf"); // Descargar el PDF
+    });
 }

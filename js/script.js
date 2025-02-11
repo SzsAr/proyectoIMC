@@ -14,19 +14,20 @@ cambiarColor.addEventListener('click', () => {
 
 guardar.addEventListener('click', () => { 
     let nombre = document.getElementById('inputNombre').value;
-    nombres.push(nombre);
-    
     let peso = document.getElementById('inputPeso').value;
-    peso = parseFloat(peso);
-    pesos.push(peso);
-    
     let altura = document.getElementById('inputAltura').value;
-    altura = parseFloat(altura);
-    alturas.push(altura);
 
     if (!nombre || !peso || !altura) {
         alert("Por favor, complete todos los campos.");
         return;
+    }else{
+        nombres.push(nombre);
+        
+        peso = parseFloat(peso);
+        pesos.push(peso);
+        
+        altura = parseFloat(altura);
+        alturas.push(altura);
     }
 
     let altura_2 = altura * altura;
